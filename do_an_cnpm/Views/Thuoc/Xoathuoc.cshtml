@@ -1,0 +1,95 @@
+﻿@model do_an_cnpm.Models.THUOC
+
+@{
+    ViewBag.Title = "Xoathuoc";
+    Layout = "~/Views/Shared/_TCADMIN.cshtml";
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<style>
+    .delete-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 70px;
+        margin-bottom: 164px;
+    }
+
+    html {
+    }
+</style>
+<div class="delete-form">
+    <h3>Bạn có chắc muốn xóa thông tin này không?</h3>
+    <div>
+        <h4>Bệnh nhân</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.MaThuoc)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MaThuoc)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.TenThuoc)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TenThuoc)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.SoLuong)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SoLuong)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DonVi)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DonVi)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.LoaiThuoc)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.LoaiThuoc)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.MoTa)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MoTa)
+            </dd>
+
+
+        </dl>
+        @if (ViewBag.Message != null)
+        {
+            <script>
+                    alert("@ViewBag.Message")
+            </script>
+        }
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Xóa" class="btn btn-default" /> |
+                @Html.ActionLink("Trở về", "Thuoc")
+            </div>
+        }
+    </div>
+</div>
+

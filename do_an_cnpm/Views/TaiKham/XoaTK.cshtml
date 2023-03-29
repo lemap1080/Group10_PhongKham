@@ -1,0 +1,77 @@
+﻿@model do_an_cnpm.Models.PHIEUHENTAIKHAM
+
+@{
+    ViewBag.Title = "XoaTK";
+    Layout = "~/Views/Shared/_TCADMIN.cshtml";
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<style>
+    .delete-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 70px;
+        margin-bottom: 164px;
+    }
+
+    html {
+    }
+</style>
+
+<div class="delete-form">
+    <h3>Bạn có chắc muốn xóa thông tin này không?</h3>
+    <div>
+        <h4>Phiếu hẹn tái khám</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.MaPHTK)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MaPHTK)
+            </dd>
+
+            <dt>
+                Bệnh nhân
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.BENHNHAN.HoTen)
+            </dd>
+
+            <dt>
+                Tên bác sĩ
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.BACSI.TenBacSi)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NgayHen)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NgayHen)
+            </dd>
+
+            
+
+            
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Xóa" class="btn btn-default" /> |
+                @Html.ActionLink("Trở về", "TaiKham")
+            </div>
+        }
+    </div>
+</div>
+

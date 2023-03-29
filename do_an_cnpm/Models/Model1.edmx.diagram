@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f6b630db886a47718627dbf16731714e" Name="Diagram1" ZoomLevel="80">
+        <EntityTypeShape EntityType="DBPhongmachModel.ADMINISTRATOR" Width="1.5" PointX="13" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPhongmachModel.BACSI" Width="1.5" PointX="3.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPhongmachModel.BENHNHAN" Width="1.5" PointX="0.75" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPhongmachModel.CAKHAM" Width="1.5" PointX="3" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPhongmachModel.CHITIETDONTHUOC" Width="1.5" PointX="11.25" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPhongmachModel.CHITIETHOADON" Width="1.5" PointX="5.25" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPhongmachModel.CHITIETPHIEUNHAPTHUOC" Width="1.5" PointX="11.25" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPhongmachModel.CHUCVU" Width="1.5" PointX="10.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPhongmachModel.CTDTTIENKHAM" Width="1.5" PointX="10" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPhongmachModel.CTDTTIENTHUOC" Width="1.5" PointX="11.875" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPhongmachModel.DOANHTHUTIENKHAM" Width="1.5" PointX="7.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPhongmachModel.DOANHTHUTIENTHUOC" Width="1.5" PointX="9" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPhongmachModel.DONTHUOC" Width="1.5" PointX="6" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPhongmachModel.HOADON" Width="1.5" PointX="3" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPhongmachModel.LETAN" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPhongmachModel.NHACUNGCAP" Width="1.5" PointX="5.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPhongmachModel.PHIEUCHUPCT" Width="1.5" PointX="3" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPhongmachModel.PHIEUCHUPXQUANG" Width="1.5" PointX="6" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPhongmachModel.PHIEUDANGKYKHAMBENH" Width="1.5" PointX="6" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPhongmachModel.PHIEUHENTAIKHAM" Width="1.5" PointX="9" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPhongmachModel.PHIEUNHAPTHUOC" Width="2.25" PointX="8" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPhongmachModel.PHIEUXETNGHIEM" Width="1.5" PointX="9" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPhongmachModel.THUOC" Width="1.875" PointX="9" PointY="17.25" IsExpanded="true" />
+        <AssociationConnector Association="DBPhongmachModel.FK__ADMINISTR__MaChu__267ABA7A" ManuallyRouted="false" />
+        <AssociationConnector Association="DBPhongmachModel.FK__CAKHAM__MaBacSi__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="DBPhongmachModel.FK__DONTHUOC__MaBacS__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="DBPhongmachModel.FK__PHIEUCHUP__MaBac__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="DBPhongmachModel.FK__PHIEUCHUP__MaBac__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="DBPhongmachModel.FK__PHIEUHENT__MaBac__628FA481" ManuallyRouted="false" />
+        <AssociationConnector Association="DBPhongmachModel.FK__PHIEUXETN__MaBac__59063A47" ManuallyRouted="false" />
+        <AssociationConnector Association="DBPhongmachModel.FK__CAKHAM__MaBN__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="DBPhongmachModel.FK__DONTHUOC__MaBN__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="DBPhongmachModel.FK__HOADON__MaBN__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="DBPhongmachModel.FK__PHIEUCHUPC__MaBN__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="DBPhongmachModel.FK__PHIEUCHUPX__MaBN__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="DBPhongmachModel.FK__PHIEUDANGK__MaBN__2E1BDC42" ManuallyRouted="false" />
+        <AssociationConnector Association="DBPhongmachModel.FK__PHIEUHENTA__MaBN__619B8048" ManuallyRouted="false" />
+        <AssociationConnector Association="DBPhongmachModel.FK__PHIEUXETNG__MaBN__5812160E" ManuallyRouted="false" />
+        <AssociationConnector Association="DBPhongmachModel.FK__CAKHAM__MaLeTan__35BCFE0A" ManuallyRouted="false" />
+        <AssociationConnector Association="DBPhongmachModel.FK__CHITIETDO__MaDon__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="DBPhongmachModel.FK__CHITIETDO__MaThu__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="DBPhongmachModel.FK__CHITIETHOA__MaHD__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="DBPhongmachModel.FK__CHITIETPH__MaPNT__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="DBPhongmachModel.FK__CHITIETPH__MaThu__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="DBPhongmachModel.FK__CTDTTIENK__MaDTT__6D0D32F4" ManuallyRouted="false" />
+        <AssociationConnector Association="DBPhongmachModel.FK__CTDTTIENT__MaDTT__6754599E" ManuallyRouted="false" />
+        <AssociationConnector Association="DBPhongmachModel.FK__CTDTTIENT__MaThu__68487DD7" ManuallyRouted="false" />
+        <AssociationConnector Association="DBPhongmachModel.FK__HOADON__MaLeTan__38996AB5" ManuallyRouted="false" />
+        <AssociationConnector Association="DBPhongmachModel.FK__PHIEUDANG__MaLeT__2F10007B" ManuallyRouted="false" />
+        <AssociationConnector Association="DBPhongmachModel.FK__PHIEUNHAP__MaNCC__4BAC3F29" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DBPhongmachModel.THUKHO" Width="1.5" PointX="6.75" PointY="20.875" />
+        <AssociationConnector Association="DBPhongmachModel.FK__THUOC__MaThuKho__797309D9" />
+        <EntityTypeShape EntityType="DBPhongmachModel.KHUNGGIO" Width="1.5" PointX="0.75" PointY="19" />
+        <AssociationConnector Association="DBPhongmachModel.FK__BENHNHAN__MaKG__07C12930" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

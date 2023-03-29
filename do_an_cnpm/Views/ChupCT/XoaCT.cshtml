@@ -1,0 +1,97 @@
+﻿@model do_an_cnpm.Models.PHIEUCHUPCT
+
+@{
+    ViewBag.Title = "XoaCT";
+    Layout = "~/Views/Shared/_TCADMIN.cshtml";
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<style>
+    .delete-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 70px;
+        margin-bottom: 164px;
+    }
+
+    html {
+    }
+</style>
+
+<div class="delete-form">
+    <h3>Bạn có chắc muốn xóa thông tin này không?</h3>
+    <div>
+        <h4>Phiếu chụp CT</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.MaPCCT)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MaPCCT)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.MaBN)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MaBN)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.MaBacSi)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MaBacSi)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ChuanDoan)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ChuanDoan)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Ngay)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Ngay)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.YeuCauChupCT)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.YeuCauChupCT)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.KetQuaChupCT)
+            </dt>
+
+            <dd>
+                <img src="@Url.Content(Model.KetQuaChupCT)" style="width:100px; height: 100px;" />
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Xóa" class="btn btn-default" /> |
+                @Html.ActionLink("Trở về", "ChupCT")
+            </div>
+        }
+    </div>
+</div>
+

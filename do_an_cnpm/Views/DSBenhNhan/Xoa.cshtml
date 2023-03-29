@@ -1,0 +1,133 @@
+﻿@model do_an_cnpm.Models.BENHNHAN
+
+@{
+    ViewBag.Title = "Xoa";
+    Layout = "~/Views/Shared/_TCADMIN.cshtml";
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<style>
+    .delete-form {
+        display:flex;
+        flex-direction: column;
+        align-items:center;
+        margin-top:70px;
+        margin-bottom:164px;
+    }
+    html {
+
+    }
+</style>
+<div class="delete-form">
+    <h3>Bạn có chắc muốn xóa thông tin này không?</h3>
+    <div>
+        <h4>Bệnh nhân</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.MaBN)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MaBN)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.HoTen)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.HoTen)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.GioiTinh)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.GioiTinh)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NgaySinh)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NgaySinh)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.SDT)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SDT)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DiaChi)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DiaChi)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NgayKham)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NgayKham)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.LoaiBenh)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.LoaiBenh)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.TrieuChung)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TrieuChung)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.LoaiDichVu)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.LoaiDichVu)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NgayDangKy)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NgayDangKy)
+            </dd>
+
+        </dl>
+        @if (ViewBag.Message != null)
+            {
+                <script>
+                    alert("@ViewBag.Message")
+                </script>
+            }
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Xóa" class="btn btn-default"/> |
+                @Html.ActionLink("Trở về", "DSBenhNhan")
+            </div>
+        }
+    </div>
+</div>
+

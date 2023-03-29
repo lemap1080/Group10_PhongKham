@@ -1,0 +1,315 @@
+﻿@model do_an_cnpm.Models.DOANHTHUTIENKHAM
+
+@{
+    ViewBag.Title = "DoanhThuT";
+    Layout = "~/Views/Shared/_TCADMIN.cshtml";
+}
+<link href="~/Content/assets/css/khanh.css" rel="stylesheet" />
+<link href="~/Content/assets/css/slider.css" rel="stylesheet" />
+<div class="app__container">
+    <div class="grid wide">
+
+
+        <div class="row sm-gutter app__content">
+            <div class="col l-2 m-0 c-0">
+                <nav class="category">
+                    <div class="category-title">DANH MỤC</div>
+                    <ul class="category-list">
+                        <li class="category-item">
+                            <a href="@Url.Action("CaKham","CaKham")" class="category-item__link">
+                                <i class="fas fa-solid fa-list"></i>
+                                Danh sách ca khám
+                            </a>
+                        </li>
+                        <li class="category-item">
+                            <a href="@Url.Action("DSBenhNhan","DSBenhNhan")" class="category-item__link">
+                                <i class="fas fa-id-card"></i>
+                                Danh sách bệnh nhân
+                            </a>
+                        </li>
+                        <li class="category-item">
+                            <button href="#" class="category-item__link category-item-button">
+
+                                <i class="fas fa-address-card"></i>
+                                Lập phiếu khám bệnh
+                                <i class="fas fa-solid fa-chevron-down" style="margin-left: 12px;"></i>
+                            </button>
+                            <div class="category-item_list-dv" style="margin-left: 45px;">
+                                <ul class="category-item_list">
+                                    <!-- <li class="category-item_list-li"><a class="category-item_list-link" href="./lap phieu kham chua benh/">Lập phiếu khám bệnh</a></li> -->
+                                    <li class="category-item_list-li"><a class="category-item_list-link" href="@Url.Action("XetNghiem", "XetNghiem")">Lập phiếu xét nghiệm</a></li>
+                                    <li class="category-item_list-li"><a class="category-item_list-link" href="@Url.Action("XQuang", "XQuang")">Lập phiếu chụp X - quang</a></li>
+                                    <li class="category-item_list-li"><a class="category-item_list-link" href="@Url.Action("ChupCT", "ChupCT")">Lập phiếu chụp CT</a></li>
+                                    <li class="category-item_list-li"><a class="category-item_list-link" href="@Url.Action("TaiKham", "TaiKham")">Lập phiếu hẹn tái khám</a></li>
+                                </ul>
+                            </div>
+
+                        </li>
+                        <li class="category-item">
+                            <button href="#" class="category-item__link category-item-button">
+                                <i class="fas fa-clinic-medical"></i>
+                                Thuốc</a>
+                                <i class="fas fa-solid fa-chevron-down" style="margin-left: 110px;"></i>
+                            </button>
+                            <div class="category-item_list-dv" style="margin-left: 45px;">
+                                <ul class="category-item_list">
+                                    @*<li class="category-item_list-li"><a class="category-item_list-link" href="./thuoc/lapdanhsachthuoc.html">Lập danh sách thuốc</a></li>*@
+                                    <li class="category-item_list-li"><a class="category-item_list-link" href="@Url.Action("Thuoc", "Thuoc")">Tra cứu thuốc</a></li>
+                                    <!-- <li class="category-item_list-li"><a class="category-item_list-link" href="../thuoc/">Lập phiếu nhập thuốc</a></li> -->
+                                    <li class="category-item_list-li"><a class="category-item_list-link" href="@Url.Action("DonThuoc", "DonThuoc")">Lập đơn thuốc</a></li>
+
+                                </ul>
+                            </div>
+
+                        </li>
+                        <li class="category-item">
+                            <a href="@Url.Action("HoaDon", "HoaDon")" class="category-item__link">
+                                <i class="fas fa-money-check-alt"></i>
+                                Lập hóa đơn thanh toán
+                            </a>
+                        </li>
+                        <li class="category-item">
+                            <a href="@Url.Action("DoanhThuT", "DoanhThuT")" class="category-item__link" style="color: var(--primary-color);">
+                                <i class="fas fa-chart-bar"></i>
+                                Doanh thu
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col l-10 m-12 c-12">
+
+                <div class="home-filter hide-on-mobile-tablet">
+                    <span class="home-filter__label">Phòng khám tai mũi họng</span>
+
+
+                    <div class="home-filter__page">
+                        <span class="home-filter__page-num">
+                            <span class="home-filter__page-current">1</span>/12
+                        </span>
+
+                        <div class="home-filter__page-control">
+                            <a href="" class="home-filter__page-btn home-filter__page-btn-disabled">
+                                <i class="home-filter__page-icon fas fa-angle-left"></i>
+                            </a>
+                            <a href="" class="home-filter__page-btn">
+                                <i class="home-filter__page-icon fas fa-angle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="home-product">
+                    <div class="row sm-gutter">
+                        <!-- Product item -->
+
+                        <div class="home-product-title">
+                            <div class="home-product-title-label">
+                                <a href="#" class="home-product-title-label__link">
+                                    <h2 class="home-product-title-label__heading">Báo cáo doanh thu</h2>
+                                </a>
+
+                                <div class="home-product-title-label-child">
+                                    <div class="buttonk1">
+                                        @*<button class="button-register_click">
+
+                                            <a href="doanhthungay.html" class="button-register_text" style="color:white">Ngày</a>
+                                        </button>*@
+
+                                        <button class="button-register_click">
+
+                                            <a href="#" class="button-register_text" style="color:white">Tháng</a>
+                                        </button>
+                                    </div>
+                                </div>
+
+
+
+
+                            </div>
+                            <div class="time1" id="current-time" style="font-size: 2rem ;text-align:center">
+                            </div>
+                            <script>
+                                var curDate = new Date();
+
+                                // Ngày hiện tại
+                                var curDay = curDate.getDate();
+
+                                // Tháng hiện tại
+                                var curMonth = curDate.getMonth() + 1;
+
+                                // Năm hiện tại
+                                var curYear = curDate.getFullYear();
+
+                                // Gán vào thẻ HTML
+                                document.getElementById('current-time').innerHTML = "Tháng: " + curMonth + "/" + curYear;
+                            </script>
+
+
+
+                            <div class="home-product-contents">
+
+                                <div class="table-case">
+                                    <table>
+
+                                        <tr>
+
+                                            <th style="font-weight:bolder;">STT</th>
+
+                                            <th style="font-weight:bolder;">Ngày</th>
+
+                                            <th style="font-weight:bolder;">Số bệnh nhân</th>
+
+                                            <th style="font-weight:bolder;">Tiền khám</th>
+                                        </tr>
+
+                                        <tr>
+
+                                            <td>1</td>
+
+                                            <td></td>
+
+                                            <td></td>
+
+                                            <td></td>
+
+
+
+                                        </tr>
+
+                                        <tr>
+
+                                            <td>2</td>
+
+                                            <td></td>
+
+                                            <td></td>
+
+                                            <td></td>
+
+
+
+                                        </tr>
+
+                                        <tr>
+
+                                            <td>3</td>
+
+                                            <td></td>
+
+                                            <td></td>
+
+                                            <td></td>
+
+
+
+                                        </tr>
+
+                                        <tr>
+
+                                            <td>4</td>
+
+                                            <td></td>
+
+                                            <td></td>
+
+                                            <td></td>
+
+
+
+                                        </tr>
+
+                                        <tr>
+
+                                            <td>5</td>
+
+                                            <td></td>
+
+                                            <td></td>
+
+                                            <td></td>
+
+
+                                        </tr>
+
+                                    </table>
+                                    <div class="table1">
+                                        <table class="table2">
+                                            <tr>
+                                                <th>Tổng doanh thu:</th>
+                                                <th> </th>
+                                            </tr>
+                                        </table>
+                                        <div class="btbaocao">
+                                            <input class="btbaocao" type="button" id="btn" value="Báo cáo" />
+                                            <script language="javascript">
+                                                var button = document.getElementById("btn");
+                                                button.onclick = function () {
+                                                    alert("Báo cáo thành công");
+                                                }
+                                            </script>
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+                <ul class="pagination home-product__pagination">
+                    <li class="pagination-item">
+                        <a href="" class="pagination-item__link">
+                            <i class="pagination-item__icon fas fa-angle-left"></i>
+                        </a>
+                    </li>
+
+                    <li class="pagination-item pagination-item--active">
+                        <a href="" class="pagination-item__link">1</a>
+                    </li>
+
+                    <li class="pagination-item">
+                        <a href="" class="pagination-item__link">2</a>
+                    </li>
+
+                    <li class="pagination-item">
+                        <a href="" class="pagination-item__link">3</a>
+                    </li>
+
+                    <li class="pagination-item">
+                        <a href="" class="pagination-item__link">4</a>
+                    </li>
+
+                    <li class="pagination-item">
+                        <a href="" class="pagination-item__link">5</a>
+                    </li>
+
+                    <li class="pagination-item">
+                        <a href="" class="pagination-item__link">...</a>
+                    </li>
+
+                    <li class="pagination-item">
+                        <a href="" class="pagination-item__link">12</a>
+                    </li>
+
+                    <li class="pagination-item">
+                        <a href="" class="pagination-item__link">
+                            <i class="pagination-item__icon fas fa-angle-right"></i>
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+

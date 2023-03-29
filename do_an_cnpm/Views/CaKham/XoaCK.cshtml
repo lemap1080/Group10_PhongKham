@@ -1,0 +1,103 @@
+﻿@model do_an_cnpm.Models.CAKHAM
+
+@{
+    ViewBag.Title = "XoaCK";
+    Layout = "~/Views/Shared/_TCADMIN.cshtml";
+}
+
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<style>
+    .delete-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 70px;
+        margin-bottom: 164px;
+    }
+
+    html {
+    }
+</style>
+<div class="delete-form">
+    <h3>Bạn có chắc muốn xóa thông tin này không?</h3>
+    <div>
+        <h4>Bệnh nhân</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.MaCaKham)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MaCaKham)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.MaBN)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MaBN)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.BENHNHAN.HoTen)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.BENHNHAN.HoTen)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.BENHNHAN.NgaySinh)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.BENHNHAN.NgaySinh)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.BENHNHAN.SDT)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.BENHNHAN.SDT)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.BENHNHAN.NgayKham)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.BENHNHAN.NgayKham)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.BACSI.TenBacSi)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.BACSI.TenBacSi)
+            </dd>
+
+
+
+        </dl>
+        @if (ViewBag.Message != null)
+        {
+            <script>
+                    alert("@ViewBag.Message")
+            </script>
+        }
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Xóa" class="btn btn-default" /> |
+                @Html.ActionLink("Trở về", "CaKham")
+            </div>
+        }
+    </div>
+</div>

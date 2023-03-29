@@ -1,0 +1,90 @@
+﻿
+
+@{
+    ViewBag.Title = "Welcome";
+    Layout = "~/Views/Shared/_TCADMIN.cshtml";
+}
+
+<div class="app__container">
+    <div class="grid wide">
+
+        <!-- <div class="aboutus">
+          <h3 class="aboutus-label">About us</h3>
+        </div> -->
+        <div class="row sm-gutter app__content">
+            <div class="col l-2 m-0 c-0">
+                <nav class="category">
+                    <div class="category-title">DANH MỤC</div>
+                    <ul class="category-list">
+                        <li class="category-item">
+                            <a href="@Url.Action("CaKham", "CaKham")" class="category-item__link">
+                                <i class="fas fa-solid fa-list"></i>
+                                Danh sách ca khám
+                            </a>
+                        </li>
+                        <li class="category-item">
+                            <a href="@Url.Action("DSBenhNhan", "DSBenhNhan")" class="category-item__link">
+                                <i class="fas fa-id-card"></i>
+                                Danh sách bệnh nhân
+                            </a>
+                        </li>
+                        <li class="category-item">
+                            <button href="#" class="category-item__link category-item-button">
+                                <i class="fas fa-address-card"></i>
+                                Lập phiếu khám bệnh
+                                <i class="fas fa-solid fa-chevron-down" style="margin-left: 18px;"></i>
+                            </button>
+                            <div class="category-item_list-dv">
+                                <ul class="category-item_list" style="margin-left:32px;">
+                                    <!-- <li class="category-item_list-li"><a class="category-item_list-link" href="./lap phieu kham chua benh/lapphieukhambenh.html">Lập phiếu khám bệnh</a></li> -->
+                                    <li class="category-item_list-li"><a class="category-item_list-link" href="@Url.Action("XetNghiem", "XetNghiem")">Phiếu xét nghiệm</a></li>
+                                    <li class="category-item_list-li"><a class="category-item_list-link" href="@Url.Action("XQuang", "XQuang")">Phiếu chụp X - quang</a></li>
+                                    <li class="category-item_list-li"><a class="category-item_list-link" href="@Url.Action("ChupCT", "ChupCT")">Phiếu chụp CT</a></li>
+                                    <li class="category-item_list-li"><a class="category-item_list-link" href="@Url.Action("TaiKham", "TaiKham")">Phiếu hẹn tái khám</a></li>
+                                </ul>
+                            </div>
+
+                        </li>
+                        <li class="category-item">
+                            <button href="#" class="category-item__link category-item-button">
+                                <i class="fas fa-clinic-medical"></i>
+                                Thuốc</a>
+                                <i class="fas fa-solid fa-chevron-down" style="margin-left: 115px;"></i>
+                            </button>
+                            <div class="category-item_list-dv">
+                                <ul class="category-item_list" style="margin-left:32px;">
+                                    @*<li class="category-item_list-li"><a class="category-item_list-link" href="@Url.Action("TaoThuoc", "Thuoc")">Lập danh sách thuốc</a></li>*@
+                                    <li class="category-item_list-li"><a class="category-item_list-link" href="@Url.Action("Thuoc", "Thuoc")">Tra cứu thuốc</a></li>
+                                    <!-- <li class="category-item_list-li"><a class="category-item_list-link" href="#">Lập phiếu nhập thuốc</a></li> -->
+                                    <li class="category-item_list-li"><a class="category-item_list-link" href="@Url.Action("DonThuoc", "DonThuoc")">Lập đơn thuốc</a></li>
+
+                                </ul>
+                            </div>
+
+                        </li>
+                        <li class="category-item">
+                            <a href="@Url.Action("HoaDon", "HoaDon")" class="category-item__link">
+                                <i class="fas fa-money-check-alt"></i>
+                                Lập hóa đơn thanh toán
+                            </a>
+                        </li>
+                        <li class="category-item">
+                            <a href="@Url.Action("DoanhThuT", "DoanhThuT")" class="category-item__link">
+                                <i class="fas fa-chart-bar"></i>
+                                Doanh thu
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col l-10 m-12 c-12">
+
+                <div class="home-filter hide-on-mobile-tablet" style="height:555px; justify-content:center;">
+                    <span class="home-filter__label">XIN CHÀO @Session["TenAD"].ToString() <b style="color:deepskyblue">❤</b></span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+

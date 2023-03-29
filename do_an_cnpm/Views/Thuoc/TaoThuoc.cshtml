@@ -1,0 +1,202 @@
+﻿@model do_an_cnpm.Models.THUOC
+
+@{
+    ViewBag.Title = "TaoThuoc";
+    Layout = "~/Views/Shared/_TCADMIN.cshtml";
+}
+<style>
+    select {
+        height: 40px;
+        padding: 8px 12px;
+        border: 1px solid #b3b3b3;
+        border-radius: 3px;
+        outline: none;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="app__container">
+    <div class="grid wide">
+
+        <!-- <div class="aboutus">
+          <h3 class="aboutus-label">About us</h3>
+        </div> -->
+        <div class="row sm-gutter app__content">
+            <div class="col l-2 m-0 c-0">
+                <nav class="category">
+                    <div class="category-title">DANH MỤC</div>
+                    <ul class="category-list">
+                        <li class="category-item">
+                            <a href="@Url.Action("CaKham","CaKham")" class="category-item__link">
+                                <i class="fas fa-solid fa-list"></i>
+                                Danh sách ca khám
+                            </a>
+                        </li>
+                        <li class="category-item">
+                            <a href="@Url.Action("DSBenhNhan","DSBenhNhan")" class="category-item__link">
+                                <i class="fas fa-id-card"></i>
+                                Danh sách bệnh nhân
+                            </a>
+                        </li>
+                        <li class="category-item">
+                            <button href="#" class="category-item__link category-item-button">
+                                <i class="fas fa-address-card"></i>
+                                Lập phiếu khám bệnh
+                                <i class="fas fa-solid fa-chevron-down" style="margin-left: 12px;"></i>
+                            </button>
+                            <div class="category-item_list-dv" style="margin-left: 45px;">
+                                <ul class="category-item_list">
+                                    <!-- <li class="category-item_list-li"><a class="category-item_list-link" href="../">Lập phiếu khám bệnh</a></li> -->
+                                    <li class="category-item_list-li"><a class="category-item_list-link" href="@Url.Action("XetNghiem", "XetNghiem")">Phiếu xét nghiệm</a></li>
+                                    <li class="category-item_list-li"><a class="category-item_list-link" href="@Url.Action("XQuang", "XQuang")">Phiếu chụp X - quang</a></li>
+                                    <li class="category-item_list-li"><a class="category-item_list-link" href="@Url.Action("ChupCT", "ChupCT")">Phiếu chụp CT</a></li>
+                                    <li class="category-item_list-li"><a class="category-item_list-link" href="@Url.Action("TaiKham", "TaiKham")">Phiếu hẹn tái khám</a></li>
+                                </ul>
+                            </div>
+
+                        </li>
+                        <li class="category-item">
+                            <button href="#" class="category-item__link category-item-button">
+                                <i class="fas fa-clinic-medical"></i>
+                                Thuốc</a>
+                                <i class="fas fa-solid fa-chevron-down" style="margin-left: 110px;"></i>
+                            </button>
+                            <div class="category-item_list-dv" style="margin-left: 45px;">
+                                <ul class="category-item_list">
+                                    @*<li class="category-item_list-li"><a class="category-item_list-link" style="color: var(--primary-color);" href="#">Lập danh sách thuốc</a></li>*@
+                                    <li class="category-item_list-li"><a class="category-item_list-link" href="@Url.Action("Thuoc", "Thuoc")">Tra cứu thuốc</a></li>
+                                    <!-- <li class="category-item_list-li"><a class="category-item_list-link" href="#">Lập phiếu nhập thuốc</a></li> -->
+                                    <li class="category-item_list-li"><a class="category-item_list-link" href="@Url.Action("DonThuoc", "DonThuoc")">Lập đơn thuốc</a></li>
+
+                                </ul>
+                            </div>
+
+                        </li>
+                        <li class="category-item">
+                            <a href="@Url.Action("HoaDon", "HoaDon")" class="category-item__link">
+                                <i class="fas fa-money-check-alt"></i>
+                                Lập hóa đơn thanh toán
+                            </a>
+                        </li>
+                        <li class="category-item">
+                            <a href="@Url.Action("DoanhThuT", "DoanhThuT")" class="category-item__link">
+                                <i class="fas fa-chart-bar"></i>
+                                Doanh thu
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col l-10 m-12 c-12">
+
+                <div class="home-filter hide-on-mobile-tablet">
+                    <span class="home-filter__label">Phòng khám tai mũi họng</span>
+                    
+                </div>
+
+               
+
+
+                <div class="home-product">
+                    <div class="row sm-gutter">
+                        <!-- Product item -->
+
+                        <div class="home-product-title">
+                            <div class="home-product-title-label">
+                                <a href="#" class="home-product-title-label__link">
+                                    <h2 class="home-product-title-label__heading">Lập danh sách thuốc</h2>
+                                </a>
+
+
+
+
+                            </div>
+
+
+                            <div class="home-product-contents-1">
+                                <form action="" method="POST" class="form3" id="form-2">
+                                    @using (Html.BeginForm())
+                                    {
+                                        @Html.AntiForgeryToken()
+                                        <h3 class="heading" style="font-size: 2rem ;">Lập danh sách thuốc</h3>
+                                        <p class="desc"></p>
+
+                                        <div class="spacer"></div>
+                                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                        <div class="form-group1">
+                                            <div class="form-group2">
+                                                <label for="text" class="form-label">Tên thủ kho</label>
+                                                @{Html.RenderAction("ChonTK", "Thuoc"); }
+                                                <span class="form-message"></span>
+                                            </div>
+
+                                            <div class="form-group2">
+                                                <label for="text" class="form-label">Tên thuốc</label>
+                                                @Html.EditorFor(model => model.TenThuoc, new { htmlAttributes = new { @class = "form-control", @required = "Vui lòng điền trường này", @placeholder = "Tên thuốc..." } })
+                                                @Html.ValidationMessageFor(model => model.TenThuoc, "", new { @class = "text-danger" })
+                                                <span class="form-message"></span>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="form-group1">
+                                            <div class="form-group2">
+                                                <label for="text" class="form-label">Số lượng</label>
+                                                @Html.EditorFor(model => model.SoLuong, new { htmlAttributes = new { @class = "form-control", @required = "Vui lòng điền trường này", @placeholder = "Số lượng..." } })
+                                                @Html.ValidationMessageFor(model => model.SoLuong, "", new { @class = "text-danger" })
+                                                <span class="form-message"></span>
+                                            </div>
+                                            <div class="form-group2">
+                                                <label for="text" class="form-label">Đơn vị</label>
+                                                @Html.EditorFor(model => model.DonVi, new { htmlAttributes = new { @class = "form-control", @required = "Vui lòng điền trường này", @placeholder = "Đơn vị..." } })
+                                                @Html.ValidationMessageFor(model => model.DonVi, "", new { @class = "text-danger" })
+                                                <span class="form-message"></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group1">
+                                            <div class="form-group2">
+                                                <label for="text" class="form-label">Loại thuốc</label>
+                                                @Html.EditorFor(model => model.LoaiThuoc, new { htmlAttributes = new { @class = "form-control", @required = "Vui lòng điền trường này", @placeholder = "Loại thuốc..." } })
+                                                @Html.ValidationMessageFor(model => model.LoaiThuoc, "", new { @class = "text-danger" })
+                                                <span class="form-message"></span>
+                                            </div>
+                                            <div class="form-group2">
+                                                <label for="text" class="form-label">Mô tả thuốc</label>
+                                                @Html.EditorFor(model => model.MoTa, new { htmlAttributes = new { @class = "form-control", @required = "Vui lòng điền trường này", @placeholder = "Mô tả thuốc..." } })
+                                                @Html.ValidationMessageFor(model => model.MoTa, "", new { @class = "text-danger" })
+                                                <span class="form-message"></span>
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="form-button">
+
+                                            <button class="form-submit1" style="width: 120px;" type="submit">Thêm thuốc</button>
+                                            <!-- <button class="form-submit1"> <a href="">Đăng ký</a></button> -->
+                                        </div>
+                                    }
+
+
+
+                                </form>
+                                <button class="btn-back">
+                                    @Html.ActionLink("Trở về", "Thuoc")
+                                </button>
+
+
+
+                            </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+

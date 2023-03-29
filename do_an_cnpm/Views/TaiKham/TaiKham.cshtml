@@ -1,0 +1,302 @@
+﻿@*@model  IEnumerable<do_an_cnpm.Models.PHIEUHENTAIKHAM>*@
+@model  IPagedList<do_an_cnpm.Models.PHIEUHENTAIKHAM>
+@using PagedList.Mvc;
+@using PagedList;
+@{
+    ViewBag.Title = "TaiKham";
+    Layout = "~/Views/Shared/_TCADMIN.cshtml";
+}
+
+<style>
+    .edit, .delete {
+        text-decoration: none;
+        font-size: 1.2rem;
+        color: blue;
+    }
+
+        .edit:hover {
+            color: #00ffff;
+        }
+
+        .delete:hover {
+            color: #00ffff;
+        }
+
+    td {
+        font-size: 1.2rem;
+    }
+
+    th a {
+        color: var(--text-color);
+    }
+    .pagelist {
+        background-color: #1da1f2;
+        height: 20px;
+        width: 20px;
+        align-items: center;
+    }
+
+    .pagination {
+        display: flex;
+        font-size: 1.5rem;
+        margin-bottom: 5px;
+    }
+    .pagination li {
+        background-color:#e5f3fd;
+        border: 1px solid;
+    }
+
+    .pagination a {
+        color: black;
+        float: left;
+        padding: 8px 16px;
+        text-decoration: none;
+    }
+
+    .pagination a.active {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    .pagination a:hover:not(.active) {
+        background-color: #60defd;
+    }
+</style>
+<div class="app__container">
+    <div class="grid wide">
+
+        <!-- <div class="aboutus">
+          <h3 class="aboutus-label">About us</h3>
+        </div> -->
+        <div class="row sm-gutter app__content">
+            <div class="col l-2 m-0 c-0">
+                <nav class="category">
+                    <div class="category-title">DANH MỤC</div>
+                    <ul class="category-list">
+                        <li class="category-item">
+                            <a href="@Url.Action("CaKham","CaKham")" class="category-item__link">
+                                <i class="fas fa-solid fa-list"></i>
+                                Danh sách ca khám
+                            </a>
+                        </li>
+                        <li class="category-item">
+                            <a href="@Url.Action("DSBenhNhan", "DSBenhNhan")" class="category-item__link">
+                                <i class="fas fa-id-card"></i>
+                                Danh sách bệnh nhân
+                            </a>
+                        </li>
+                        <li class="category-item">
+                            <button href="#" class="category-item__link category-item-button">
+                                <i class="fas fa-address-card"></i>
+                                Lập phiếu khám bệnh
+                                <i class="fas fa-solid fa-chevron-down" style="margin-left: 12px;"></i>
+                            </button>
+                            <div class="category-item_list-dv" style="margin-left: 45px;">
+                                <ul class="category-item_list">
+                                    <!-- <li class="category-item_list-li"><a class="category-item_list-link" href="./lap phieu kham chua benh/lapphieukhambenh.html">Lập phiếu khám bệnh</a></li> -->
+                                    <li class="category-item_list-li"><a class="category-item_list-link" href="@Url.Action("XetNghiem", "XetNghiem")">Phiếu xét nghiệm</a></li>
+                                    <li class="category-item_list-li"><a class="category-item_list-link" href="@Url.Action("XQuang", "XQuang")">Phiếu chụp X - quang</a></li>
+                                    <li class="category-item_list-li"><a class="category-item_list-link" href="@Url.Action("ChupCT", "ChupCT")">Phiếu chụp CT</a></li>
+                                    <li class="category-item_list-li"><a class="category-item_list-link" style="color: var(--primary-color);" href="@Url.Action("TaiKham", "TaiKham")">Phiếu hẹn tái khám</a></li>
+                                </ul>
+                            </div>
+
+                        </li>
+                        <li class="category-item">
+                            <button href="#" class="category-item__link category-item-button">
+                                <i class="fas fa-clinic-medical"></i>
+                                Thuốc</a>
+                                <i class="fas fa-solid fa-chevron-down" style="margin-left: 110px;"></i>
+                            </button>
+                            <div class="category-item_list-dv" style="margin-left: 45px;">
+                                <ul class="category-item_list">
+                                    @*<li class="category-item_list-li"><a class="category-item_list-link" href="@Url.Action("TaoThuoc", "Thuoc")">Lập danh sách thuốc</a></li>*@
+                                    <li class="category-item_list-li"><a class="category-item_list-link" href="@Url.Action("Thuoc", "Thuoc")">Tra cứu thuốc</a></li>
+                                    <!-- <li class="category-item_list-li"><a class="category-item_list-link" href="#">Lập phiếu nhập thuốc</a></li> -->
+                                    <li class="category-item_list-li"><a class="category-item_list-link" href="@Url.Action("DonThuoc", "DonThuoc")">Lập đơn thuốc</a></li>
+
+                                </ul>
+                            </div>
+
+                        </li>
+                        <li class="category-item">
+                            <a href="@Url.Action("HoaDon", "HoaDon")" class="category-item__link">
+                                <i class="fas fa-money-check-alt"></i>
+                                Lập hóa đơn thanh toán
+                            </a>
+                        </li>
+                        <li class="category-item">
+                            <a href="@Url.Action("DoanhThuT", "DoanhThuT")" class="category-item__link">
+                                <i class="fas fa-chart-bar"></i>
+                                Doanh thu
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col l-10 m-12 c-12">
+
+                <div class="home-filter hide-on-mobile-tablet">
+                    <span class="home-filter__label">Phòng khám tai mũi họng</span>
+
+                </div>
+
+
+                <div class="home-product">
+                    <div class="row sm-gutter">
+                        <!-- Product item -->
+
+                        <div class="home-product-title">
+                            <div class="home-product-title-label">
+                                <a href="#" class="home-product-title-label__link">
+                                    <h2 class="home-product-title-label__heading">Danh sách phiếu tái khám</h2>
+                                </a>
+                                <div class="home-product-title-label-child">
+                                    @using (Html.BeginForm("TaiKham", "TaiKham"))
+                                    {
+                                        <div class="searching">
+                                            @Html.TextBox("search", ViewBag.CurrentFilter as string, new { @class = "searching-input", @placeholder = "Nhập tên bệnh nhân...", @type = "text" })
+                                            <button class="header__search-btn" type="submit">
+                                                <i class="header__search-btn-icon fas fa-search"></i>
+                                            </button>
+                                        </div>
+                                    }
+
+
+                                    <div class="button-register" style="margin-left: 10px;">
+                                        <button class="button-register_click">
+                                            <i class="fas fa-plus button-register_icon"></i>
+                                            <a href="@Url.Action("LapPhieuTK","TaiKham")" class="button-register_text">Lập phiếu</a>
+                                        </button>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                            <div class="home-product-contents">
+
+                                <div class="table-case">
+                                    <table>
+
+                                        <tr>
+
+                                            <th style="font-weight:bolder;">@Html.ActionLink("MÃ PHIẾU TK", "TaiKham", new { sortOrder = ViewBag.MaPTKSortParm })</th>
+
+                                            <th style="font-weight:bolder;">@Html.ActionLink("MÃ BỆNH NHÂN", "TaiKham", new { sortOrder = ViewBag.MaBNSortParm })</th>
+
+                                            <th style="font-weight:bolder;">HỌ TÊN</th>
+
+                                            <th style="font-weight:bolder;">NGÀY KHÁM</th>
+
+                                            <th style="font-weight:bolder;">NGÀY HẸN</th>
+
+                                            <th style="font-weight:bolder;">GIỚI TÍNH</th>
+
+                                            <th style="font-weight:bolder;">ĐỊA CHỈ</th>
+
+                                            <th style="font-weight:bolder;">BÁC SĨ ĐIỀU TRỊ</th>
+
+                                            <th style="font-weight:bolder;">CHỈNH SỬA</th>
+
+
+
+                                        </tr>
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>@Html.DisplayFor(model => item.MaPHTK)</td>
+
+                                                <td>@Html.DisplayFor(model => item.MaBN)</td>
+
+                                                <td>@(item.BENHNHAN == null?"": item.BENHNHAN.HoTen)</td>
+
+                                                <td>@(item.BENHNHAN.NgayKham.HasValue?item.BENHNHAN.NgayKham.Value.ToString("dd/MM/yyyy"):"")</td>
+
+                                                <td>@(item.NgayHen.HasValue?item.NgayHen.Value.ToString("dd/MM/yyyy"):"")</td>
+
+                                                <td>@(item.BENHNHAN == null?"": item.BENHNHAN.GioiTinh)</td>
+
+                                                <td>@(item.BENHNHAN == null?"": item.BENHNHAN.DiaChi)</td>
+
+                                                <td>@(item.BACSI == null?"": item.BACSI.TenBacSi)</td>
+
+
+
+                                                <td style="display: flex; justify-content:space-evenly;">
+                                                    @Html.ActionLink("Sửa", "SuaTK", "TaiKham", new { id = item.MaPHTK }, new { @class = "edit" })
+                                                    /
+                                                    @Html.ActionLink("Chi tiết", "ChiTietTK", "TaiKham", new { id = item.MaPHTK }, new { @class = "edit" })
+                                                    /
+                                                    @Html.ActionLink("Xóa", "XoaTK", "TaiKham", new { id = item.MaPHTK }, new { @class = "delete" })
+                                                </td>
+
+                                            </tr>
+                                        }
+
+
+
+
+                                    </table>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+                @Html.PagedListPager(Model, page => Url.Action("TaiKham", new { page, pageSize = 8 }))
+                @*
+            <ul class="pagination home-product__pagination">
+            <li class="pagination-item">
+                <a href="" class="pagination-item__link">
+                    <i class="pagination-item__icon fas fa-angle-left"></i>
+                </a>
+            </li>
+
+            <li class="pagination-item pagination-item--active">
+                <a href="" class="pagination-item__link">1</a>
+            </li>
+
+            <li class="pagination-item">
+                <a href="" class="pagination-item__link">2</a>
+            </li>
+
+            <li class="pagination-item">
+                <a href="" class="pagination-item__link">3</a>
+            </li>
+
+            <li class="pagination-item">
+                <a href="" class="pagination-item__link">4</a>
+            </li>
+
+            <li class="pagination-item">
+                <a href="" class="pagination-item__link">5</a>
+            </li>
+
+            <li class="pagination-item">
+                <a href="" class="pagination-item__link">...</a>
+            </li>
+
+            <li class="pagination-item">
+                <a href="" class="pagination-item__link">14</a>
+            </li>
+
+            <li class="pagination-item">
+                <a href="" class="pagination-item__link">
+                    <i class="pagination-item__icon fas fa-angle-right"></i>
+                </a>
+            </li>
+
+        </ul>
+                *@
+
+
+            </div>
+        </div>
+    </div>
+</div>
+

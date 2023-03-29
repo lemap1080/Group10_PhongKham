@@ -1,0 +1,206 @@
+﻿@model do_an_cnpm.Models.HOADON
+
+@{
+    ViewBag.Title = "HoaDon";
+    Layout = "~/Views/Shared/_TCADMIN.cshtml";
+}
+
+<div class="app__container">
+    <div class="grid wide">
+
+
+        <div class="row sm-gutter app__content">
+            <div class="col l-2 m-0 c-0">
+                <nav class="category">
+                    <div class="category-title">DANH MỤC</div>
+                    <ul class="category-list">
+                        <li class="category-item">
+                            <a href="@Url.Action("CaKham","CaKham")" class="category-item__link">
+                                <i class="fas fa-solid fa-list"></i>
+                                Danh sách ca khám
+                            </a>
+                        </li>
+                        <li class="category-item">
+                            <a href="@Url.Action("DSBenhNhan", "DSBenhNhan")" class="category-item__link">
+                                <i class="fas fa-id-card"></i>
+                                Danh sách bệnh nhân
+                            </a>
+                        </li>
+                        <li class="category-item">
+                            <button href="#" class="category-item__link category-item-button">
+
+                                <i class="fas fa-address-card"></i>
+                                Lập phiếu khám bệnh
+                                <i class="fas fa-solid fa-chevron-down" style="margin-left: 12px;"></i>
+                            </button>
+                            <div class="category-item_list-dv" style="margin-left: 45px;">
+                                <ul class="category-item_list">
+                                    <!-- <li class="category-item_list-li"><a class="category-item_list-link" href="phieudangkykhambenh.html">Lập phiếu khám bệnh</a></li> -->
+                                    <li class="category-item_list-li"><a class="category-item_list-link" href=""@Url.Action("XetNghiem", "XetNghiem")">Lập phiếu xét nghiệm</a></li>
+                                    <li class="category-item_list-li"><a class="category-item_list-link" href="@Url.Action("XQuang", "XQuang")">Lập phiếu chụp X - quang</a></li>
+                                    <li class="category-item_list-li"><a class="category-item_list-link" href="@Url.Action("ChupCT", "ChupCT")">Lập phiếu chụp CT</a></li>
+                                    <li class="category-item_list-li"><a class="category-item_list-link" href="@Url.Action("TaiKham", "TaiKham")">Lập phiếu hẹn tái khám</a></li>
+                                </ul>
+                            </div>
+
+                        </li>
+                        <li class="category-item">
+                            <button href="#" class="category-item__link category-item-button">
+                                <i class="fas fa-clinic-medical"></i>
+                                Thuốc</a>
+                                <i class="fas fa-solid fa-chevron-down" style="margin-left: 110px;"></i>
+                            </button>
+                            <div class="category-item_list-dv" style="margin-left: 45px;">
+                                <ul class="category-item_list">
+                                    @*<li class="category-item_list-li"><a class="category-item_list-link" href="./thuoc/lapdanhsachthuoc.html">Lập danh sách thuốc</a></li>*@
+                                    <li class="category-item_list-li"><a class="category-item_list-link" href="@Url.Action("Thuoc", "Thuoc")">Tra cứu thuốc</a></li>
+                                    <!-- <li class="category-item_list-li"><a class="category-item_list-link" href="../thuoc/lapdanhsachthuoc">Lập phiếu nhập thuốc</a></li> -->
+                                    <li class="category-item_list-li"><a class="category-item_list-link" href="@Url.Action("DonThuoc", "DonThuoc")">Lập đơn thuốc</a></li>
+
+                                </ul>
+                            </div>
+
+                        </li>
+                        <li class="category-item">
+                            <a href="#" class="category-item__link" style="color: var(--primary-color);">
+                                <i class="fas fa-money-check-alt"></i>
+                                Lập hóa đơn thanh toán
+                            </a>
+                        </li>
+                        <li class="category-item">
+                            <a href="@Url.Action("DoanhThuT", "DoanhThuT")" class="category-item__link">
+                                <i class="fas fa-chart-bar"></i>
+                                Doanh thu
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col l-10 m-12 c-12">
+
+                <div class="home-filter hide-on-mobile-tablet">
+                    <span class="home-filter__label">Phòng khám tai mũi họng</span>
+
+                </div>
+
+
+
+
+
+                <div class="home-product">
+                    <div class="row sm-gutter">
+                        <!-- Product item -->
+
+                        <div class="home-product-title">
+                            <div class="home-product-title-label">
+                                <a href="#" class="home-product-title-label__link">
+                                    <h2 class="home-product-title-label__heading">Lập hóa đơn thanh toán</h2>
+                                </a>
+
+
+
+
+                            </div>
+
+
+                            <div class="home-product-contents-1">
+                                <form action="" method="POST" class="form3" id="form-2">
+
+                                    <div class="form-group1">
+                                        <div class="form-group2">
+
+                                            <input id="text" name="text" type="text" placeholder="Họ tên nhân viên:" class="form-control">
+                                            <span class="form-message"></span>
+                                        </div>
+                                        <div class="form-group2">
+
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group1">
+                                        <div class="form-group2">
+
+                                            <input id="email" name="email" type="text" placeholder="Họ tên khách hàng" class="form-control">
+                                            <span class="form-message"></span>
+                                        </div>
+                                        <div class="form-group2">
+
+                                            <input id="email" name="email" type="text" placeholder="Ngày khám" class="form-control">
+                                            <span class="form-message"></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group1">
+                                        <div class="form-group2">
+
+                                            <input id="email" name="email" type="text" placeholder="Tiền khám" class="form-control">
+                                            <span class="form-message"></span>
+                                        </div>
+                                        <div class="form-group2">
+
+                                            <input id="email" name="email" type="text" placeholder="Tiền thuốc" class="form-control">
+                                            <span class="form-message"></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group1">
+                                        <div class="form-group2">
+
+                                            <input id="email" name="email" type="text" " placeholder="Tiền dịch vụ" class="form-control">
+                                            <span class="form-message"></span>
+                                        </div>
+                                        <div class="form-group2">
+
+                                            <input id="email" name="email" type="text" placeholder="Tổng tiền" class="form-control">
+                                            <span class="form-message"></span>
+                                        </div>
+                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            </div>
+                            <div class="form-button">
+                                <button class="form-submit1"> <a href="">Xóa</a></button>
+                                <button class="form-submit1" onclick="window.print()">In phiếu</button>
+                                <input class="form-submit1" type="button" id="btn" value="Lưu" />
+                                <script language="javascript">
+										var button = document.getElementById("btn");
+										button.onclick = function(){
+											alert("Lưu thành công");
+										}
+                                </script>
+                            </div>
+
+
+                            </form>
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer2">
+        <div class="footer__bottom2">
+            <div class="grid wide">
+                <p class="footer__text">© 2022 - Bản quyền thuộc về Phòng khám tai mũi họng Hoàn Kim</p>
+            </div>
+        </div>
+
+    </footer>
+</div>
+
